@@ -125,7 +125,8 @@
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
-    <Content Include="Roles.aspx" />
+    <Content Include="CreateRoles.aspx" />
+    <Content Include="AssignRoles.aspx" />
     <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -147,12 +148,19 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Roles.aspx.cs">
-      <DependentUpon>Roles.aspx</DependentUpon>
+    <Compile Include="CreateRoles.aspx.cs">
+      <DependentUpon>CreateRoles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Roles.aspx.designer.cs">
-      <DependentUpon>Roles.aspx</DependentUpon>
+    <Compile Include="CreateRoles.aspx.designer.cs">
+      <DependentUpon>CreateRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignRoles.aspx.cs">
+      <DependentUpon>AssignRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssignRoles.aspx.designer.cs">
+      <DependentUpon>AssignRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
