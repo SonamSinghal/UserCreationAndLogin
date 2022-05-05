@@ -12,12 +12,18 @@ namespace UserCreationAndLogin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
                 BindUserToUserList();
                 BindRolesToList();
 
                 CheckForSelectedUser();
+            }
+
+            if (Page.IsPostBack)
+            {
+                CheckForSelectedUser();
+
             }
         }
 
@@ -62,5 +68,36 @@ namespace UserCreationAndLogin
                     RoleCheckBox.Checked = false;
             }
         }
+
+        protected void RoleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //SELECTED CHECKBOX
+            CheckBox RoleCheckBox = sender as CheckBox;
+            //SELECTED USER
+            string selectedUser =  UserList.SelectedValue ;
+            //SELECT ROLE
+            string role = RoleCheckBox.Text;
+
+            //CHECKING IF ROLE EXISTS
+            if (!RoleCheckBox.Checked)
+            {
+                Roles.AddUserToRole(selectedUser, role);
+                Msg.Text = String.Format("{0} is added to role {1}", selectedUser, role); 
+            }
+            else
+            {
+                Roles.RemoveUserFromRole(selectedUser, role);
+                Msg.Text = String.Format("{0} is removed from role {1}", selectedUser, role);
+
+            }
+
+            
+
+        }
+
+        //protected void AssignRole_Click(object sender, EventArgs e)
+        //{
+        //    RoleCheckBox_CheckedChanged();
+        //}
     }
 }

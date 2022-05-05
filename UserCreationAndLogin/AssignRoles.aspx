@@ -21,11 +21,16 @@
         <div>
             <asp:Repeater ID="RoleList" runat="server">
                 <ItemTemplate>
-                    <asp:CheckBox ID="RoleCheckBox" runat="server" AutoPostBack="true" Text='<%# Container.DataItem %>' />
+                    <asp:CheckBox ID="RoleCheckBox" runat="server"  AutoPostBack="true"
+                        OnCheckedChanged="RoleCheckBox_CheckedChanged"  
+                        Text='<%# Container.DataItem %>' />
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+
+        <%--<div>
+            <asp:Button ID="AssignRole" runat="server" Text="Assign Role" OnClick="AssignRole_Click" /></div>--%>
     </form>
 </body>
 </html>

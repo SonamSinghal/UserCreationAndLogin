@@ -13,5 +13,20 @@ namespace UserCreationAndLogin
         {
 
         }
+
+        protected void CreateRole_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateRoles.aspx");
+        }
+
+        protected void AssignRole_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AssignRoles.aspx");
+        }
+
+        protected void Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
+        }
     }
 }
